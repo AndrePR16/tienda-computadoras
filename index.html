@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PC EXTREME - Computadoras a tu Medida</title>
+  <link rel="icon" href="img/favicon.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#hero">Inicio</a>
+      <a href="#caracteristicas">Equipos</a>
+      <a href="#faq">Preguntas Frecuentes</a>
+      <a href="#contacto">Contacto</a>
+      <button id="theme-toggle" style="margin-top: 10px;">🌓 Cambiar Modo</button>
+    </nav>
+    
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>PC EXTREME</h1>
+      <p>Computadoras a medida que se adaptan perfectamente a tus necesidades y a tu presupuesto, sin pagar de más.</p>
+      <img src="img/hero.jpg" alt="Computadora de escritorio moderna armada a medida en un espacio de trabajo iluminado" width="720" height="720">
+    </section>
+
+    <section id="caracteristicas">
+      <h2>¿Por qué elegir nuestras computadoras?</h2>
+      <ul>
+        <li><strong>Presupuesto flexible:</strong> Armamos equipos tecnológicos adaptados a lo que puedas y quieras gastar.</li>
+        <li><strong>Para casa o negocio:</strong> Desde PCs familiares para tareas y entretenimiento, hasta equipos potentes para la gestión de tu empresa.</li>
+        <li><strong>Asesoría personalizada:</strong> No necesitas saber de componentes; nosotros configuramos el equipo ideal para ti.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>Preguntas Frecuentes</h2>
+      
+      <details>
+        <summary>¿Qué pasa si no sé nada de componentes de computadoras?</summary>
+        <p>No te preocupes. Cuéntanos para qué necesitas la PC (estudios, oficina, juegos) y cuál es tu presupuesto; nosotros nos encargamos de seleccionar las mejores piezas para ti.</p>
+      </details>
+
+      <details>
+        <summary>¿Los equipos vienen listos para usar?</summary>
+        <p>Sí, entregamos todas las computadoras completamente armadas, testeadas y con el sistema operativo configurado para que solo tengas que conectarla y empezar a trabajar.</p>
+      </details>
+    </section>
+
+    <section id="contactodirect">
+      <h2>Cotiza tu PC EXTREME</h2>
+      <form>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" required>
+
+        
+        <label for="motivo">Motivo de tu consulta</label>
+        <select id="motivo">
+          <option value="cotizacion">Quiero cotizar una computadora</option>
+          <option value="soporte">Soporte técnico o garantía</option>
+          <option value="sugerencia">Sugerencia o reclamo</option>
+        </select>
+
+        <label for="mensaje">Cuéntanos qué necesitas (Uso de la PC, presupuesto estimado...)</label>
+        <textarea id="mensaje" placeholder="Escribe aquí los detalles de tu computadora ideal..."></textarea>
+
+        <button type="submit">Enviar solicitud</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer id="contactoredes">
+    <p>Contacto: soporte@pcextreme.com</p>
+
+    <a href="#" aria-label="Síguenos en Facebook">
+      <img src="img/facebook.svg" alt="" width="32" height="32">
+    </a>
+    <a href="#" aria-label="Síguenos en Instagram">
+      <img src="img/instagram.svg" alt="" width="32" height="32">
+    </a>
+    <a href="#" aria-label="Síguenos en LinkedIn">
+      <img src="img/linkedin.svg" alt="" width="32" height="32">
+    </a>
+    <a href="#" aria-label="Escríbenos por WhatsApp para cotizar tu computadora">
+      <img src="img/whatsapp.svg" alt="" width="32" height="32">
+    </a>
+
+    <p>&copy; 2026 PC EXTREME. Todos los derechos reservados.</p>
+  </footer>
+    
+   <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        document.body.removeAttribute('data-theme');
+      } else {
+        document.body.setAttribute('data-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
