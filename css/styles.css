@@ -1,80 +1,370 @@
-/* Variables CSS (Logro 1) */
+/* ==========================
+   MÓVIL (<640px)
+   ESTILOS BASE
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   VARIABLES
+========================== */
+
 :root {
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
-  --accent-color: #ff4500; /* Un rojo/naranja potente para PC EXTREME */
+  --accent-color: #ff4500;
   --card-bg: #f4f4f4;
-  --transition-speed: 0.3s; /* Para el Logro 2 */
+  --transition-speed: .3s;
 }
 
-/* Variables para el Modo Oscuro */
+/* ==========================
+   MODO OSCURO
+========================== */
+
 [data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #f5f5f5;
   --card-bg: #1e1e1e;
 }
 
-/* Estilos Base utilizando las variables */
+/* ==========================
+   BODY
+========================== */
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 20px;
-  transition: background-color var(--transition-speed), color var(--transition-speed);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+
+  transition:
+    background-color var(--transition-speed),
+    color var(--transition-speed);
 }
 
-/* Microinteracciones en Enlaces (Logro 2) */
-nav a, footer a {
-  color: var(--text-color);
+/* ==========================
+   NAVBAR
+========================== */
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+header nav .logo {
+  flex-grow: 1;
+}
+
+nav a {
   text-decoration: none;
-  margin-right: 15px;
-  transition: color var(--transition-speed);
+  color: var(--text-color);
+  font-weight: 700;
+  transition: color .3s;
 }
 
-nav a:hover, footer a:hover {
-  color: var(--accent-color); /* Resalta al pasar el mouse */
-  text-decoration: underline;
+nav a:hover {
+  color: var(--accent-color);
 }
 
-/* Botones y Formulario ordenados hacia abajo */
-form {
+/* ==========================
+   HERO
+========================== */
+
+#hero {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  gap: 10px;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  padding: 32px;
 }
 
-input, select, textarea {
-  padding: 8px;
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid #ccc;
-  border-radius: 4px;
+#hero img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+  transition: transform .3s;
 }
 
-/* Microinteracciones en Botones (Logro 2) */
-button {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: transform var(--transition-speed), background-color var(--transition-speed);
+#hero img:hover {
+  transform: scale(1.03);
 }
 
-button:hover {
-  background-color: #e03d00;
-  transform: scale(1.03); /* Efecto de crecimiento sutil */
+/* ==========================
+   SECCIONES
+========================== */
+
+#caracteristicas,
+#faq,
+#contactodirect,
+#galeria,
+#testimonios {
+  padding: 32px;
 }
 
-/* Estilos para las preguntas frecuentes */
+/* ==========================
+   TARJETAS GENERALES
+========================== */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.card {
+  width: 100%;
+
+  padding: 16px;
+
+  background: var(--card-bg);
+
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+
+  transition:
+    transform .3s,
+    box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .15);
+}
+
+.card img {
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* ==========================
+   TESTIMONIOS
+========================== */
+
+#testimonios .cards {
+  display: flex;
+  flex-direction: column;
+}
+
+#testimonios .card {
+  width: 100%;
+}
+
+/* ==========================
+   FAQ
+========================== */
+
 details {
-  background-color: var(--card-bg);
+  background: var(--card-bg);
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 4px;
+}
+
+/* ==========================
+   CONTACTO
+========================== */
+
+#contactodirect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contactodirect form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 400px;
+}
+
+#contactodirect label {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  padding: 8px;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  background: var(--card-bg);
+  color: var(--text-color);
+
+  font: inherit;
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+button {
+  background: var(--accent-color);
+  color: white;
+
+  border: none;
+  border-radius: 4px;
+
+  padding: 10px 15px;
+
+  cursor: pointer;
+  font-weight: bold;
+
+  transition:
+    transform .3s,
+    background-color .3s;
+}
+
+button:hover {
+  background: #e03d00;
+  transform: translateY(-3px);
+}
+
+/* ==========================
+   GALERÍA
+========================== */
+
+.galeria {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+  transition: transform .3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.03);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 16px 32px;
+
+  background: var(--card-bg);
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+}
+
+footer img {
+  transition: transform .3s;
+}
+
+footer img:hover {
+  transform: scale(1.1);
+}
+
+/* ==================================
+   TABLET (640px - 1023px)
+================================== */
+
+@media (min-width:640px) {
+
+  /* Características */
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 45%;
+  }
+
+  /* Testimonios */
+  #testimonios .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #testimonios .card {
+    flex: 1 1 45%;
+  }
+
+  /* Galería */
+  .galeria {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .galeria img {
+    width: 48%;
+  }
+
+}
+
+/* ==================================
+   ESCRITORIO (1024px o más)
+================================== */
+
+@media (min-width:1024px) {
+
+  header nav {
+    flex-wrap: nowrap;
+  }
+
+  #hero {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  #hero img {
+    max-width: 50%;
+  }
+
+  /* Características */
+  .card {
+    flex: 1 1 30%;
+  }
+
+  /* Testimonios */
+  #testimonios .card {
+    flex: 1 1 30%;
+  }
+
+  /* Galería */
+  .galeria img {
+    width: 23%;
+  }
+
+  /* Footer */
+  footer {
+    justify-content: space-between;
+  }
+
 }

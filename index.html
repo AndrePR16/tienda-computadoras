@@ -1,51 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>PC EXTREME - Computadoras a tu Medida</title>
   <link rel="icon" href="img/favicon.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
   <header>
     <nav>
+      <a href="#hero" class="logo">PC EXTREME</a>
+
       <a href="#hero">Inicio</a>
       <a href="#caracteristicas">Equipos</a>
       <a href="#faq">Preguntas Frecuentes</a>
-      <a href="#contacto">Contacto</a>
-      <button id="theme-toggle" style="margin-top: 10px;">🌓 Cambiar Modo</button>
+      <a href="#contactodirect">Contacto</a>
+
+      <button id="theme-toggle">🌓 Cambiar Modo</button>
     </nav>
-    
+
   </header>
 
   <main>
     <section id="hero">
       <h1>PC EXTREME</h1>
       <p>Computadoras a medida que se adaptan perfectamente a tus necesidades y a tu presupuesto, sin pagar de más.</p>
-      <img src="img/hero.jpg" alt="Computadora de escritorio moderna armada a medida en un espacio de trabajo iluminado" width="720" height="720">
+      <img src="img/hero.jpg" alt="Computadora de escritorio moderna armada a medida en un espacio de trabajo iluminado"
+        width="720" height="720">
     </section>
 
     <section id="caracteristicas">
       <h2>¿Por qué elegir nuestras computadoras?</h2>
-      <ul>
-        <li><strong>Presupuesto flexible:</strong> Armamos equipos tecnológicos adaptados a lo que puedas y quieras gastar.</li>
-        <li><strong>Para casa o negocio:</strong> Desde PCs familiares para tareas y entretenimiento, hasta equipos potentes para la gestión de tu empresa.</li>
-        <li><strong>Asesoría personalizada:</strong> No necesitas saber de componentes; nosotros configuramos el equipo ideal para ti.</li>
-      </ul>
+      <div class="cards">
+
+        <article class="card">
+          <img src="img/presupuesto.svg" alt="" width="48" height="48">
+
+          <h3>Presupuesto Flexible</h3>
+
+          <p>
+            Armamos computadoras adaptadas a lo que puedas invertir,
+            evitando gastos innecesarios.
+          </p>
+        </article>
+
+        <article class="card">
+          <img src="img/pc_escritorio.svg" alt="" width="48" height="48">
+
+          <h3>Equipos para Hogar y Negocio</h3>
+
+          <p>
+            Desde PCs familiares hasta estaciones de trabajo para empresas.
+          </p>
+        </article>
+
+        <article class="card">
+          <img src="img/asesoría.svg" alt="" width="48" height="48">
+
+          <h3>Asesoría Personalizada</h3>
+
+          <p>
+            Te ayudamos a elegir los componentes ideales según tu necesidad.
+          </p>
+        </article>
+
+      </div>
     </section>
 
     <section id="faq">
       <h2>Preguntas Frecuentes</h2>
-      
+
       <details>
         <summary>¿Qué pasa si no sé nada de componentes de computadoras?</summary>
-        <p>No te preocupes. Cuéntanos para qué necesitas la PC (estudios, oficina, juegos) y cuál es tu presupuesto; nosotros nos encargamos de seleccionar las mejores piezas para ti.</p>
+        <p>No te preocupes. Cuéntanos para qué necesitas la PC (estudios, oficina, juegos) y cuál es tu presupuesto;
+          nosotros nos encargamos de seleccionar las mejores piezas para ti.</p>
       </details>
 
       <details>
         <summary>¿Los equipos vienen listos para usar?</summary>
-        <p>Sí, entregamos todas las computadoras completamente armadas, testeadas y con el sistema operativo configurado para que solo tengas que conectarla y empezar a trabajar.</p>
+        <p>Sí, entregamos todas las computadoras completamente armadas, testeadas y con el sistema operativo configurado
+          para que solo tengas que conectarla y empezar a trabajar.</p>
       </details>
     </section>
 
@@ -58,7 +95,7 @@
         <label for="email">Correo electrónico</label>
         <input type="email" id="email" required>
 
-        
+
         <label for="motivo">Motivo de tu consulta</label>
         <select id="motivo">
           <option value="cotizacion">Quiero cotizar una computadora</option>
@@ -72,7 +109,50 @@
         <button type="submit">Enviar solicitud</button>
       </form>
     </section>
+    <section id="galeria">
+      <h2>Galería</h2>
+      <div class="galeria">
 
+        <img src="img/PC-Gamer.jpg" alt="Computadora gamer">
+        <img src="img/PC-oficina.jpg" alt="PC para oficina">
+        <img src="img/PC-personalizada.jpg" alt="Computadora personalizada">
+        <img src="img/PC-componentes.jpg" alt="Componentes de computadora">
+
+      </div>
+    </section>
+    <section id="testimonios">
+      <h2>Testimonios</h2>
+      <div class="cards">
+        
+        <article class="card">
+          <h3>Carlos M.</h3>
+          <p>
+            Excelente atención. Me armaron una PC para diseño
+            y funciona perfectamente.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>María P.</h3>
+
+          <p>
+            Me ayudaron a elegir componentes sin conocer nada
+            de computadoras.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>José R.</h3>
+
+          <p>
+            La computadora llegó lista para usar y con muy buen
+            rendimiento.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
   </main>
 
   <footer id="contactoredes">
@@ -93,8 +173,8 @@
 
     <p>&copy; 2026 PC EXTREME. Todos los derechos reservados.</p>
   </footer>
-    
-   <script>
+
+  <script>
     const toggleButton = document.getElementById('theme-toggle');
     toggleButton.addEventListener('click', () => {
       const currentTheme = document.body.getAttribute('data-theme');
@@ -107,4 +187,5 @@
   </script>
 
 </body>
+
 </html>
