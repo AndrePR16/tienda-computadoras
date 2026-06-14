@@ -12,14 +12,20 @@
 
   <header>
     <nav>
-      <a href="#hero" class="logo">PC EXTREME</a>
+      <a href="index.html" class="logo">PC EXTREME</a>
 
-      <a href="#hero">Inicio</a>
-      <a href="#caracteristicas">Equipos</a>
-      <a href="#faq">Preguntas Frecuentes</a>
-      <a href="#contactodirect">Contacto</a>
+      <a href="index.html">Inicio</a>
 
-      <button id="theme-toggle">🌓 Cambiar Modo</button>
+      <a href="precios.html">Precios</a>
+
+      <a href="faq.html" id="icono-faq" aria-label="Preguntas frecuentes">
+
+        <img src="img/faq.svg" alt="" width="24" height="24">
+      </a>
+
+      <button id="theme-toggle">
+        🌓
+      </button>
     </nav>
 
   </header>
@@ -123,7 +129,7 @@
     <section id="testimonios">
       <h2>Testimonios</h2>
       <div class="cards">
-        
+
         <article class="card">
           <h3>Carlos M.</h3>
           <p>
@@ -175,17 +181,35 @@
   </footer>
 
   <script>
-    const toggleButton = document.getElementById('theme-toggle');
-    toggleButton.addEventListener('click', () => {
-      const currentTheme = document.body.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        document.body.removeAttribute('data-theme');
-      } else {
-        document.body.setAttribute('data-theme', 'dark');
-      }
-    });
-  </script>
+    const toggleButton = document.getElementById("theme-toggle");
 
+        // Aplicar tema guardado al cargar la página
+        const temaGuardado = localStorage.getItem("theme");
+
+        if (temaGuardado === "dark") {
+            document.body.setAttribute("data-theme", "dark");
+        }
+
+        // Cambiar tema al hacer clic
+        toggleButton.addEventListener("click", () => {
+
+            const currentTheme = document.body.getAttribute("data-theme");
+
+            if (currentTheme === "dark") {
+
+                document.body.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                document.body.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+  </script>
+  
 </body>
 
 </html>

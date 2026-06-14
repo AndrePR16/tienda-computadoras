@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PC EXTREME - Preguntas Frecuentes</title>
+
+    <link rel="icon" href="img/favicon.jpeg" type="image/jpeg">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="faq-layout">
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+
+            <a href="index.html" class="logo">
+                PC EXTREME
+            </a>
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="precios.html">
+                Precios
+            </a>
+
+            <a href="faq.html" id="icono-faq" aria-label="Preguntas frecuentes">
+
+                <img src="img/faq.svg" alt="" width="24" height="24">
+
+            </a>
+
+            <button id="theme-toggle">
+                🌓
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- MENÚ LATERAL -->
+    <nav class="faq-nav">
+
+        <h2>Categorías</h2>
+
+        <ul>
+
+            <li>
+                <a href="#general">
+                    General
+                </a>
+            </li>
+
+            <li>
+                <a href="#precios">
+                    Precios
+                </a>
+            </li>
+
+            <li>
+                <a href="#soporte">
+                    Soporte
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="faq-main">
+
+        <h1>
+            Preguntas Frecuentes
+        </h1>
+
+
+        <section id="general">
+
+            <h2>
+                General
+            </h2>
+
+            <details>
+                <summary>
+                    ¿Qué tipo de computadoras ofrecen?
+                </summary>
+
+                <p>
+                    Ofrecemos computadoras para oficina, hogar, estudios y gaming, adaptadas a cada presupuesto.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    ¿Las computadoras vienen listas para usar?
+                </summary>
+
+                <p>
+                    Sí. Entregamos los equipos completamente armados y configurados.
+                </p>
+
+            </details>
+
+        </section>
+
+
+        <section id="precios">
+
+            <h2>
+                Precios
+            </h2>
+
+            <details>
+
+                <summary>
+                    ¿Puedo solicitar una cotización personalizada?
+                </summary>
+
+                <p>
+                    Sí. Podemos armar una computadora según tus necesidades y presupuesto.
+                </p>
+
+            </details>
+
+        </section>
+
+
+        <section id="soporte">
+
+            <h2>
+                Soporte
+            </h2>
+
+            <details>
+
+                <summary>
+                    ¿Cómo puedo comunicarme con soporte?
+                </summary>
+
+                <p>
+                    Puedes contactarnos mediante correo electrónico o WhatsApp para resolver cualquier consulta.
+                </p>
+
+            </details>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer id="contactoredes">
+
+        <p>
+            Contacto: soporte@pcextreme.com
+        </p>
+
+        <a href="#" aria-label="Síguenos en Facebook">
+            <img src="img/facebook.svg" alt="" width="32" height="32">
+        </a>
+
+        <a href="#" aria-label="Síguenos en Instagram">
+            <img src="img/instagram.svg" alt="" width="32" height="32">
+        </a>
+
+        <a href="#" aria-label="Síguenos en LinkedIn">
+            <img src="img/linkedin.svg" alt="" width="32" height="32">
+        </a>
+
+        <a href="#" aria-label="Escríbenos por WhatsApp">
+
+            <img src="img/whatsapp.svg" alt="" width="32" height="32">
+
+        </a>
+
+        <p>
+            &copy; 2026 PC EXTREME. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- SCRIPT DEL MODO OSCURO -->
+    <script>
+
+        const toggleButton = document.getElementById("theme-toggle");
+
+        // Aplicar tema guardado al cargar la página
+        const temaGuardado = localStorage.getItem("theme");
+
+        if (temaGuardado === "dark") {
+            document.body.setAttribute("data-theme", "dark");
+        }
+
+        // Cambiar tema al hacer clic
+        toggleButton.addEventListener("click", () => {
+
+            const currentTheme = document.body.getAttribute("data-theme");
+
+            if (currentTheme === "dark") {
+
+                document.body.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                document.body.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

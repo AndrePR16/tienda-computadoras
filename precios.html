@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PC EXTREME - Planes y Precios</title>
+
+    <link rel="icon" href="img/favicon.jpeg" type="image/jpeg">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER (copiado del index.html) -->
+    <header>
+        <nav>
+
+            <a href="index.html" class="logo">
+                PC EXTREME
+            </a>
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a href="precios.html">
+                Precios
+            </a>
+
+            <a href="faq.html" id="icono-faq" aria-label="Preguntas frecuentes">
+
+                <img src="img/faq.svg" alt="" width="24" height="24">
+
+            </a>
+
+            <button id="theme-toggle">
+                🌓
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- CONTENIDO PROPIO DE PRECIOS.HTML -->
+    <main>
+
+        <div id="content-precios">
+
+            <h1>Planes y precios</h1>
+
+            <p>
+                Elige la computadora ideal según tu presupuesto.
+            </p>
+
+        </div>
+
+
+        <div class="planes">
+
+            <article class="plan">
+
+                <h2>Básico</h2>
+
+                <p class="precio">
+                    S/1200
+                </p>
+
+                <ul>
+                    <li>Uso doméstico</li>
+                    <li>SSD 256 GB</li>
+                </ul>
+
+                <a href="#">
+                    Comprar
+                </a>
+
+            </article>
+
+
+            <article class="plan">
+
+                <h2>Oficina</h2>
+
+                <p class="precio">
+                    S/1800
+                </p>
+
+                <ul>
+                    <li>SSD 512 GB</li>
+                    <li>8 GB RAM</li>
+                </ul>
+
+                <a href="#">
+                    Comprar
+                </a>
+
+            </article>
+
+
+            <article class="plan">
+
+                <h2>Gamer</h2>
+
+                <p class="precio">
+                    S/3500
+                </p>
+
+                <ul>
+                    <li>RTX dedicada</li>
+                    <li>16 GB RAM</li>
+                    <li>SSD 1 TB</li>
+                </ul>
+
+                <a href="#">
+                    Comprar
+                </a>
+
+            </article>
+
+
+            <article class="plan">
+
+                <h2>Extreme Pro</h2>
+
+                <p class="precio">
+                    S/5000
+                </p>
+
+                <ul>
+                    <li>RTX alta gama</li>
+                    <li>32 GB RAM</li>
+                    <li>SSD NVMe</li>
+                </ul>
+
+                <a href="#">
+                    Comprar
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <!-- GRID INTERMEDIO -->
+        <section class="clientes">
+
+            <h2>
+                Marcas que confían en nosotros
+            </h2>
+
+            <div class="logos">
+
+                <div class="logo-cliente">
+                    ACER
+                </div>
+
+                <div class="logo-cliente">
+                    ASUS
+                </div>
+
+                <div class="logo-cliente">
+                    MSI
+                </div>
+
+                <div class="logo-cliente">
+                    HP
+                </div>
+
+                <div class="logo-cliente">
+                    LENOVO
+                </div>
+
+                <div class="logo-cliente">
+                    DELL
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER (copiado del index.html) -->
+    <footer id="contactoredes">
+
+        <p>
+            Contacto: soporte@pcextreme.com
+        </p>
+
+        <a href="#" aria-label="Síguenos en Facebook">
+            <img src="img/facebook.svg" alt="" width="32" height="32">
+        </a>
+
+        <a href="#" aria-label="Síguenos en Instagram">
+            <img src="img/instagram.svg" alt="" width="32" height="32">
+        </a>
+
+        <a href="#" aria-label="Síguenos en LinkedIn">
+            <img src="img/linkedin.svg" alt="" width="32" height="32">
+        </a>
+
+        <a href="#" aria-label="Escríbenos por WhatsApp">
+
+            <img src="img/whatsapp.svg" alt="" width="32" height="32">
+
+        </a>
+
+        <p>
+            &copy; 2026 PC EXTREME. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- SCRIPT DEL MODO OSCURO -->
+    <script>
+
+        const toggleButton = document.getElementById("theme-toggle");
+
+        // Aplicar tema guardado al cargar la página
+        const temaGuardado = localStorage.getItem("theme");
+
+        if (temaGuardado === "dark") {
+            document.body.setAttribute("data-theme", "dark");
+        }
+
+        // Cambiar tema al hacer clic
+        toggleButton.addEventListener("click", () => {
+
+            const currentTheme = document.body.getAttribute("data-theme");
+
+            if (currentTheme === "dark") {
+
+                document.body.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                document.body.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

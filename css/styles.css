@@ -1,6 +1,5 @@
 /* ==========================
-   MÓVIL (<640px)
-   ESTILOS BASE
+RESET
 ========================== */
 
 * {
@@ -10,7 +9,7 @@
 }
 
 /* ==========================
-   VARIABLES
+VARIABLES
 ========================== */
 
 :root {
@@ -22,7 +21,7 @@
 }
 
 /* ==========================
-   MODO OSCURO
+MODO OSCURO
 ========================== */
 
 [data-theme="dark"] {
@@ -32,7 +31,7 @@
 }
 
 /* ==========================
-   BODY
+BODY
 ========================== */
 
 body {
@@ -40,14 +39,13 @@ body {
   color: var(--text-color);
   font-family: system-ui, sans-serif;
   line-height: 1.5;
-
   transition:
     background-color var(--transition-speed),
     color var(--transition-speed);
 }
 
 /* ==========================
-   NAVBAR
+NAVBAR
 ========================== */
 
 header nav {
@@ -66,7 +64,6 @@ nav a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 700;
-  transition: color .3s;
 }
 
 nav a:hover {
@@ -74,7 +71,7 @@ nav a:hover {
 }
 
 /* ==========================
-   HERO
+HERO
 ========================== */
 
 #hero {
@@ -90,8 +87,6 @@ nav a:hover {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-
-  transition: transform .3s;
 }
 
 #hero img:hover {
@@ -99,7 +94,7 @@ nav a:hover {
 }
 
 /* ==========================
-   SECCIONES
+SECCIONES
 ========================== */
 
 #caracteristicas,
@@ -111,7 +106,7 @@ nav a:hover {
 }
 
 /* ==========================
-   TARJETAS GENERALES
+CARDS
 ========================== */
 
 .cards {
@@ -123,22 +118,10 @@ nav a:hover {
 
 .card {
   width: 100%;
-
   padding: 16px;
-
   background: var(--card-bg);
-
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-
-  transition:
-    transform .3s,
-    box-shadow .3s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, .15);
 }
 
 .card img {
@@ -150,20 +133,15 @@ nav a:hover {
 }
 
 /* ==========================
-   TESTIMONIOS
+TESTIMONIOS
 ========================== */
 
 #testimonios .cards {
-  display: flex;
   flex-direction: column;
 }
 
-#testimonios .card {
-  width: 100%;
-}
-
 /* ==========================
-   FAQ
+FAQ
 ========================== */
 
 details {
@@ -174,7 +152,7 @@ details {
 }
 
 /* ==========================
-   CONTACTO
+CONTACTO
 ========================== */
 
 #contactodirect {
@@ -184,60 +162,39 @@ details {
 }
 
 #contactodirect form {
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  width: 100%;
-  max-width: 400px;
-}
-
-#contactodirect label {
-  font-weight: 600;
 }
 
 input,
 select,
 textarea {
   padding: 8px;
-
   border: 1px solid #ccc;
   border-radius: 4px;
-
   background: var(--card-bg);
   color: var(--text-color);
-
   font: inherit;
 }
 
 /* ==========================
-   BOTONES
+BOTONES
 ========================== */
 
 button {
   background: var(--accent-color);
   color: white;
-
   border: none;
   border-radius: 4px;
-
   padding: 10px 15px;
-
   cursor: pointer;
-  font-weight: bold;
-
-  transition:
-    transform .3s,
-    background-color .3s;
-}
-
-button:hover {
-  background: #e03d00;
-  transform: translateY(-3px);
 }
 
 /* ==========================
-   GALERÍA
+GALERÍA
 ========================== */
 
 .galeria {
@@ -249,54 +206,156 @@ button:hover {
 
 .galeria img {
   width: 100%;
-  height: auto;
   border-radius: 8px;
-
-  transition: transform .3s;
-}
-
-.galeria img:hover {
-  transform: scale(1.03);
 }
 
 /* ==========================
-   FOOTER
+FOOTER
 ========================== */
 
 footer {
   display: flex;
   flex-wrap: wrap;
-
   justify-content: center;
   align-items: center;
-
   gap: 16px;
-
   padding: 16px 32px;
-
   background: var(--card-bg);
 }
 
-footer a {
-  display: inline-flex;
+/* ==================================================
+PRECIOS.HTML
+================================================== */
+
+#content-precios {
+  text-align: center;
+}
+
+.planes {
+  display: grid;
+  gap: 24px;
+  padding: 32px;
+  margin: 0 auto;
+}
+
+.plan {
+  background: var(--card-bg);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+
+  min-height: 320px;
 }
 
-footer img {
-  transition: transform .3s;
+.plan .precio {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 16px 0;
 }
 
-footer img:hover {
-  transform: scale(1.1);
+.plan ul {
+  list-style: none;
+  text-align: center;
 }
 
-/* ==================================
-   TABLET (640px - 1023px)
-================================== */
+.plan a {
+  text-decoration: none;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+/* Logos */
+
+.clientes {
+  padding: 32px;
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.logo-cliente {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ==================================================
+FAQ.HTML
+================================================== */
+
+.faq-layout {
+  display: grid;
+
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+
+  grid-template-columns: 1fr;
+
+  gap: 16px;
+  min-height: 100vh;
+}
+
+.faq-layout header {
+  grid-area: header;
+}
+
+.faq-nav {
+  grid-area: nav;
+  background: var(--card-bg);
+  padding: 16px;
+  margin: 0 16px;
+  border-radius: 8px;
+}
+
+.faq-main {
+  grid-area: main;
+  padding: 16px;
+}
+
+.faq-layout footer {
+  grid-area: footer;
+}
+
+.faq-nav ul {
+  list-style: none;
+}
+
+.faq-main details {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 16px 0;
+}
+
+.faq-main summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-layout h1 {
+  text-align: center;
+}
+
+/* ==================================================
+TABLET
+================================================== */
 
 @media (min-width:640px) {
 
-  /* Características */
   .cards {
     flex-direction: row;
     flex-wrap: wrap;
@@ -306,17 +365,10 @@ footer img:hover {
     flex: 1 1 45%;
   }
 
-  /* Testimonios */
-  #testimonios .cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
   #testimonios .card {
     flex: 1 1 45%;
   }
 
-  /* Galería */
   .galeria {
     flex-direction: row;
     flex-wrap: wrap;
@@ -326,11 +378,25 @@ footer img:hover {
     width: 48%;
   }
 
+  .planes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .faq-layout {
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
 }
 
-/* ==================================
-   ESCRITORIO (1024px o más)
-================================== */
+/* ==================================================
+DESKTOP
+================================================== */
 
 @media (min-width:1024px) {
 
@@ -347,24 +413,24 @@ footer img:hover {
     max-width: 50%;
   }
 
-  /* Características */
   .card {
     flex: 1 1 30%;
   }
 
-  /* Testimonios */
   #testimonios .card {
     flex: 1 1 30%;
   }
 
-  /* Galería */
   .galeria img {
     width: 23%;
   }
 
-  /* Footer */
   footer {
     justify-content: space-between;
+  }
+
+  .planes {
+    grid-template-columns: repeat(4, 1fr);
   }
 
 }
