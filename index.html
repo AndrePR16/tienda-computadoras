@@ -95,24 +95,57 @@
     <section id="contactodirect">
       <h2>Cotiza tu PC EXTREME</h2>
       <form>
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" required>
+
+        <label for="nombre">Nombre (mín. 3 caracteres)</label>
+        <input type="text" id="nombre" name="nombre" required minlength="3">
 
         <label for="email">Correo electrónico</label>
-        <input type="email" id="email" required>
+        <input type="email" id="email" name="email" required>
 
+        <label for="telefono">Teléfono (9 dígitos)</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required>
 
-        <label for="motivo">Motivo de tu consulta</label>
-        <select id="motivo">
-          <option value="cotizacion">Quiero cotizar una computadora</option>
-          <option value="soporte">Soporte técnico o garantía</option>
-          <option value="sugerencia">Sugerencia o reclamo</option>
+        <label for="motivo">Motivo del contacto</label>
+
+        <select id="motivo" name="motivo" required>
+
+          <option value="">
+            Selecciona un motivo
+          </option>
+
+          <option value="consulta">
+            Consulta
+          </option>
+
+          <option value="reclamo">
+            Reclamo
+          </option>
+
+          <option value="sugerencia">
+            Sugerencia
+          </option>
+
         </select>
 
-        <label for="mensaje">Cuéntanos qué necesitas (Uso de la PC, presupuesto estimado...)</label>
-        <textarea id="mensaje" placeholder="Escribe aquí los detalles de tu computadora ideal..."></textarea>
+        <label for="mensaje">
+          Mensaje
+        </label>
 
-        <button type="submit">Enviar solicitud</button>
+        <textarea id="mensaje" name="mensaje" rows="4" required minlength="10">
+  </textarea>
+
+        <label>
+
+          <input type="checkbox" id="acepto" name="acepto" required>
+
+          Acepto los términos y condiciones
+
+        </label>
+
+        <button type="submit">
+          Enviar
+        </button>
+
       </form>
     </section>
     <section id="galeria">
@@ -183,33 +216,33 @@
   <script>
     const toggleButton = document.getElementById("theme-toggle");
 
-        // Aplicar tema guardado al cargar la página
-        const temaGuardado = localStorage.getItem("theme");
+    // Aplicar tema guardado al cargar la página
+    const temaGuardado = localStorage.getItem("theme");
 
-        if (temaGuardado === "dark") {
-            document.body.setAttribute("data-theme", "dark");
-        }
+    if (temaGuardado === "dark") {
+      document.body.setAttribute("data-theme", "dark");
+    }
 
-        // Cambiar tema al hacer clic
-        toggleButton.addEventListener("click", () => {
+    // Cambiar tema al hacer clic
+    toggleButton.addEventListener("click", () => {
 
-            const currentTheme = document.body.getAttribute("data-theme");
+      const currentTheme = document.body.getAttribute("data-theme");
 
-            if (currentTheme === "dark") {
+      if (currentTheme === "dark") {
 
-                document.body.removeAttribute("data-theme");
-                localStorage.setItem("theme", "light");
+        document.body.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
 
-            } else {
+      } else {
 
-                document.body.setAttribute("data-theme", "dark");
-                localStorage.setItem("theme", "dark");
+        document.body.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
 
-            }
+      }
 
-        });
+    }); 
   </script>
-  
+
 </body>
 
 </html>
